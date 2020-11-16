@@ -174,8 +174,8 @@ class MenuItem extends DataObject implements PermissionProvider
         } else {
             $page = $this->Page();
 
-            if ($page instanceof DataObject) {
-                if ($page->ID != 0 && $page->hasMethod($field)) {
+            if ($page->ID != 0 && $page instanceof DataObject) {
+                if ($page->hasMethod($field)) {
                     return $page->$field();
                 } else {
                     return $page->$field;
